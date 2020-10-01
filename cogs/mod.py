@@ -112,7 +112,11 @@ class mod:
         except discord.Forbidden:
             await ctx.send("Oops! I don't have enough permissions to swing this ban hammer.")
 
-
+    @commands.command()
+    @commands.has_permissions(ban_members=True)
+    async def unban(self, ctx, member: discord.Object):
+        await ctx.guild.unban(member)
+        await ctx.send(f'Ok unbanned user with ID {member.id}')
 
     @commands.command()
     @commands.has_permissions(ban_members=True)

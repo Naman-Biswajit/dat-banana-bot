@@ -7,7 +7,6 @@ import aiohttp
 from discord.ext import commands
 from .utils.paginator import HelpPaginator, CannotPaginate
 
-
 class Help:
     def __init__(self, bot):
        self.bot = bot
